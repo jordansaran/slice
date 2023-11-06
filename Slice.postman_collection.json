@@ -61,6 +61,33 @@
 					"response": []
 				},
 				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "excel",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}{{api}}upload/csv",
+							"host": [
+								"{{base_url}}{{api}}upload"
+							],
+							"path": [
+								"csv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "update",
 					"request": {
 						"method": "PUT",
