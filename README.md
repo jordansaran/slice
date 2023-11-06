@@ -40,12 +40,12 @@ docker-compose up docker-slice-api
 ```
 ### Observações
 A url de acesso a API é **http://0.0.0.0:8000/**, caso deseje alterar a porta de acesso modifique
-o arquivo **docker-compose.yml** no parametro **ports** (8000:8000) e o arquivo **Dockerfile** na linha 22 referente ao EXPOSE.
+o arquivo **docker-compose.yml** no parametro **ports** (8000:8000).
 
 ## 1.2. Docker
 Apenas execute o seguinte comando para inicializar o container da aplicação via terminal ou IDE para inseir os seeders dentro do banco de dados.
 ````shell
-docker-compose start stationery-shop-api
+docker-compose start docker-slice-api
 ````
 
 # Documentação
