@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "d3ae5ec2-78e9-470d-9fcd-1a170f0d01a5",
+		"name": "Slice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23650972"
+	},
+	"item": [
+		{
+			"name": "Sale",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{api}}{{sales}}",
+							"host": [
+								"{{base_url}}{{api}}{{sales}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{api}}{{sales}}{{id}}",
+							"host": [
+								"{{base_url}}{{api}}{{sales}}{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order\": \"ABC555\",\n    \"buyer_document\": \"123.456.789\",\n    \"delivery_date\": \"2023-11-06\",\n    \"sale_date\": \"2023-11-06\",\n    \"price\": 100.0,\n    \"product_id\": 5,\n    \"amount\": 1,\n    \"observation\": \"observation\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{api}}{{sales}}",
+							"host": [
+								"{{base_url}}{{api}}{{sales}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"buyer_document\": \"123.456.789\",\n    \"delivery_date\": \"2023-11-06\",\n    \"sale_date\": \"2023-11-06\",\n    \"price\": 100.0,\n    \"product_id\": 5,\n    \"amount\": 1,\n    \"observation\": \"observation\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}{{api}}{{sales}}{{id}}",
+							"host": [
+								"{{base_url}}{{api}}{{sales}}{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{api}}{{sales}}{{id}}",
+							"host": [
+								"{{base_url}}{{api}}{{sales}}{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Correios",
+			"item": [
+				{
+					"name": "getCep",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}{{api}}cep?cep=17607140",
+							"host": [
+								"{{base_url}}{{api}}cep"
+							],
+							"query": [
+								{
+									"key": "cep",
+									"value": "17607140"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/"
+		},
+		{
+			"key": "id",
+			"value": "ABC123"
+		},
+		{
+			"key": "sales",
+			"value": "sales/",
+			"type": "string"
+		},
+		{
+			"key": "api",
+			"value": "api/",
+			"type": "string"
+		}
+	]
+}

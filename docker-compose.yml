@@ -1,0 +1,47 @@
+version: '1.0'
+name: docker-slice-api
+services:
+    api:
+        image: docker.io/bitnami/laravel:10
+        command: php artisan migrate
+        ports:
+            - '8000:8000'
+        environment:
+            - DB_HOST=db
+            - DB_PORT=3306
+            - DB_USERNAME=correios
+            - DB_DATABASE=correios
+            - DB_PASSWORD=correios
+            - APP_ENV=development
+            - APP_NAME=Laravel
+            - APP_DEBUG=true
+        volumes:
+            - './correios-api:/app'
+        depends_on:
+            - db
+        networks:
+            - correios
+
+    db:
+        image: mariadb:latest
+        container_name: slice-db-container
+        restart: always
+        ports:
+            - 3306:3306
+        volumes:
+            -  data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: correios
+            MYSQL_DATABASE: correios
+            MYSQL_USER: correios
+            MYSQL_PASSWORD: correios
+        networks:
+            - correios
+
+networks:
+    correios:
+        driver: bridge
+
+volumes:
+    data:
+
